@@ -24,6 +24,9 @@ def signup(request):
 def resources(request):
     return render(request, 'resources.html')
 
+def new_gig(request):
+        return render(request, 'gig/new.html')
+
 def signup(request):
     error_message = ''
     if request.method == 'POST':

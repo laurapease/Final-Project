@@ -7,6 +7,8 @@ urlpatterns = [
     path('resources/', views.resources, name='resources'),
     path('signup/', views.signup, name='signup'),
     path('livestreams/', views.livestreams, name='livestreams'),
+    path('gig/new', views.new_gig, name='new_gig'),
+
 
 
 
