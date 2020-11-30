@@ -12,6 +12,11 @@ As these venues and festivals have been shuttered, tens of thousands of workers 
 
 The target users of this application are those out of work roadies. I hope to create an online community where people can share work available in cities across the US, as well as online resources offering grants or other assistance. And, in an effort to support those artists that these crews help put on shows each night, a page dedicated to livestreams
 
+As a User, I want to be able to post job openings in a city.
+As a User, I want to be able to find a list of job openings in a city.
+As a User, I want to be able to find upcoming Livestreams to watch to support out of work musicians
+As a User, I want to find a list of resources for out of work touring crew when I click the "Resources" link
+
 Technologies Used:
 
 - Django
