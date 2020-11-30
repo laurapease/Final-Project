@@ -2,10 +2,12 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.forms import UserCreationForm
 from .models import Profile, Post
-from django.contrib.auth.models import User
-from django.contrib.auth import login
+from django.contrib.auth.models import Permission, User
 from django.contrib.auth.decorators import login_required
 from .forms import PostForm, ProfileForm
+from django.contrib.auth import authenticate, login
+from django.core.exceptions import PermissionDenied
+
 
 
 
@@ -43,6 +45,8 @@ def posts_index(request):
     posts = Post.objects.all()
     context = {'posts': posts}
     return render(request, 'posts/index.html', context)
+
+
 
 def signup(request):
     error_message = ''
