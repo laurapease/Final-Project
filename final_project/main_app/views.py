@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.contrib.auth.forms import UserCreationForm
+
 
 # Create your views here.
 
@@ -21,6 +23,23 @@ def signup(request):
 
 def resources(request):
     return render(request, 'resources.html')
+
+def signup(request):
+    error_message = ''
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect('new_profile')
+        else: 
+            error_message = 'Username is already in use. Please enter another name.'
+            form = UserCreationForm()
+            context = {'form': form, 'error_message': error_message}
+            return render(request, 'registration/signup.html',context)
+    form = UserCreationForm()
+    context = {'form': form, 'error_message': error_message}
+    return render(request, 'registration/signup.html', context)
 
 #-----------Livestreams
 def livestreams(request):
