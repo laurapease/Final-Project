@@ -8,7 +8,7 @@ from .forms import PostForm, ProfileForm
 from django.contrib.auth import authenticate, login
 from django.contrib import auth
 from django.core.exceptions import PermissionDenied
-
+from django.contrib import messages
 
 
 
@@ -45,16 +45,22 @@ def logout(request):
 def new_post(request):
     if request.method == 'POST':
         form = PostForm(request.POST, request.FILES)
+        
         if form.is_valid():
             new_post = form.save(commit=False)
             new_post.posted_by = request.user
             new_post.save()
-            return redirect('show_post', post_id)
+            return redirect('show_post', new_post.id)
     else:
         form = PostForm()
         context = {'form': form}
         return render(request, 'posts/new.html', context)
-   
+
+
+
+
+
+
 def edit_post(request):
         return render(request, 'posts/edit.html')
 
