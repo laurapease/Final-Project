@@ -3,8 +3,9 @@ from django.contrib.auth.models import User
 from django.contrib.auth.views import LoginView
 from django.urls import reverse
 from datetime import date
-from pyuploadcare.dj.models import ImageField
 from pyuploadcare.dj.forms import ImageField
+from django.utils import timezone
+
 
 
 
@@ -35,7 +36,12 @@ class Post(models.Model):
     posted_by = models.ForeignKey(User, on_delete=models.CASCADE)
     city = models.CharField(max_length=50)
     description = models.TextField(max_length=500)
+    added_date = models.DateTimeField(default=timezone.now)
+
 
 
     def __str__(self):
-        return self.title       
+        return self.title  
+
+
+            
