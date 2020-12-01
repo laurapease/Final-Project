@@ -41,39 +41,19 @@ def logout(request):
 
 #-----------Post a Job
 
-
-# @login_required
-# def new_post(request):
-#     if request.method == 'POST':
-#         post_form = PostForm(request.POST, request.FILES)
-#         if post_form.is_valid():
-#             post = post_form.save(commit=False)
-#             post.posted_by = request.user
-#             post.save()
-#             return redirect('posts/show.html', new_post.id)
-#     else:
-#         post_form = PostForm()
-#         context = {
-#             'post_form': post_form,
-#             # 'post': post
-#         }
-
-#     return render(request, 'posts/show.html', context)
-    
-
 @login_required
 def new_post(request):
     if request.method == 'POST':
         form = PostForm(request.POST, request.FILES)
         if form.is_valid():
-            post = form.save(commit=False)
-            post.posted_by = request.user
-            post.save()
-            return redirect('home')
+            new_post = form.save(commit=False)
+            new_post.posted_by = request.user
+            new_post.save()
+            return redirect('show_post', posts_id)
     else:
         form = PostForm()
-
-    return render(request, 'posts/new.html', {'form': form})
+        context = {'form': form}
+        return render(request, 'posts/new.html', context)
    
 def edit_post(request):
         return render(request, 'posts/edit.html')

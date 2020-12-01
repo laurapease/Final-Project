@@ -1,4 +1,6 @@
 {% extends 'base.html' %}
+{% load widget_tweaks %}
+{% load crispy_forms_tags %}
 
 {% block title %}
 Add a Post
@@ -7,26 +9,17 @@ Add a Post
 {% block content %}
 
 
-{% load widget_tweaks %}
-
-<form method="post" novalidate>
+<h1>Add a Post</h1>
+<div class="row">
+    <div class="card-panel col m8 offset-m2">
+<form method="POST">
     {% csrf_token %}
-
-    {% for hidden_field in form.hidden_fields %}
-    {{ hidden_field }}
-    {% endfor %}
-
-    {% for field in form.visible_fields %}
-    <div class="form-group">
-        {{ field.label_tag }}
-        {% render_field field class="form-control" %}
-        {% if field.help_text %}
-        <small class="form-text text-muted">{{ field.help_text }}</small>
-        {% endif %}
-    </div>
-    {% endfor %}
-
-    <button type="submit" class="btn btn-primary">Submit</button>
+        {{ form.as_p }}
+    <input class='btn' type='submit' value="Add Post">
 </form>
+
+</div>
+</div>
+
 
 {% endblock %}
