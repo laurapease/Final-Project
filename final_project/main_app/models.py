@@ -33,7 +33,7 @@ class Profile(models.Model):
 class Post(models.Model):
     title = models.CharField(max_length=100)
     posted_by = models.ForeignKey(User, on_delete=models.CASCADE)
-    city = models.ForeignKey(City, on_delete=models.CASCADE)
+    city = models.CharField(max_length=50)
     description = models.TextField(max_length=500)
 
 

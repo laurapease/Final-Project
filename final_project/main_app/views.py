@@ -6,6 +6,7 @@ from django.contrib.auth.models import Permission, User
 from django.contrib.auth.decorators import login_required
 from .forms import PostForm, ProfileForm
 from django.contrib.auth import authenticate, login
+from django.contrib import auth
 from django.core.exceptions import PermissionDenied
 
 
@@ -33,22 +34,26 @@ def resources(request):
 def livestreams(request):
     return render(request, 'livestreams.html')
 
+
+def logout(request):
+    auth.logout(request)
+    return redirect('about')
+
 #-----------Post a Job
 
 @login_required
 def new_post(request):
     if request.method == 'POST':
-        post_form = PostForm(request.POST)
-        if post_form.is_valid():
-            new_post = post_form.save(commit=False)
+        form = PostForm(request.POST)
+        if form.is_valid():
+            new_post = form.save(commit=False)
             new_post.user = request.user
-            new_post.city_id = city_id
             new_post.save()
             return redirect('posts_index')
     else: 
         form = PostForm()
         context = {'form': form }
-        return render(request, 'posts/new.html', context)
+        return render(request, 'posts/index.html', context)
 
 def edit_post(request):
         return render(request, 'posts/edit.html')
@@ -58,24 +63,61 @@ def posts_index(request):
     context = {'posts': posts}
     return render(request, 'posts/index.html', context)
 
+def view_post(request, post_id):
+    post = Post.objects.get(id=post_id)
+
+    context = {'post': post}
+    return render(request, 'posts/show.html', context)
 
 
 def signup(request):
-    error_message = ''
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
-        if form.is_valid():
-            user = form.save()
-            login(request, user)
-            return redirect('new_profile')
-        else: 
-            error_message = 'This username is already in use. Please try another name.'
-            form = UserCreationForm()
-            context = {'form': form, 'error_message': error_message}
-            return render(request, 'registration/signup.html',context)
-    form = UserCreationForm()
-    context = {'form': form, 'error_message': error_message}
-    return render(request, 'registration/signup.html', context)
+        
+        first_name = request.POST['first_name']
+        last_name = request.POST['last_name']
+        username = request.POST['username']
+        email = request.POST['email']
+        password = request.POST['password']
+        password2 = request.POST['password2']
+        
+        # Check if passwords match
+        if password == password2:
+            # Check if username exists
+            if User.objects.filter(username=username).exists():
+                return render(request, 'registration/signup.html', {'error': 'That username has already been registered. Please try a different username'})
+            else:
+                # Check if email exists
+                if User.objects.filter(email=email).exists():
+                    return render(request, 'registration/signup.html', {'error': 'That email has already been registered'})
+                else:
+                    # Register User
+                    user = User.objects.create_user(
+                        username=username, password=password, email=email, first_name=first_name, last_name=last_name)
+                    user.save()
+                    return redirect('login')
+        else:
+            return render(request, 'registration/signup.html', {'error': 'Passwords do not match'})
+    else:
+        return render(request, 'registration/signup.html')
+
+
+
+# def signup(request):
+#     error_message = ''
+#     if request.method == 'POST':
+#         form = UserCreationForm(request.POST)
+#         if form.is_valid():
+#             user = form.save()
+#             login(request, user)
+#             return redirect('new_profile')
+#         else: 
+#             error_message = 'This username is already in use. Please try another name.'
+#             form = UserCreationForm()
+#             context = {'form': form, 'error_message': error_message}
+#             return render(request, 'registration/signup.html',context)
+#     form = UserCreationForm()
+#     context = {'form': form, 'error_message': error_message}
+#     return render(request, 'registration/signup.html', context)
 
 @login_required
 def new_profile(request):

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>About this Gig</h1>
+<hr />
+<h4>Job Title: {{ post.title }}</h4>
+
+<h3>Location: {{ post.city }} </h3>
+
+<h4>Description: {{ post.description }}</h4>
+<!-- title = models.CharField(max_length=100)
+posted_by = models.ForeignKey(User, on_delete=models.CASCADE)
+city = models.CharField(max_length=50)
+description = models.TextField(max_length=500) -->
+
+
+
+{% endblock %}

@@ -1,19 +1,44 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% block content %}
+<h2>Register</h2>
 
-{% block title %}
-Sign Up
-{% endblock %}
+{% if error %}
+<p style="background-color: salmon; padding: 10px;">{{ error }}</p>
+{% endif %}
 
-{% block content %}
-
-<h1>Sign Up and Join the Roadie Community Here!</h1>
-
-{% if error_message %}<p class="red-text">{{error_message}}</p>{% endif %}
-
-<form method="POST" action="{% url 'signup' %}">
+<form action="{% url 'signup' %}" method="POST">
     {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" class="btn" value="signup">
+
+    <p>
+        <label for="first_name">First Name</label>
+        <input type="text" name="first_name" required maxlength="25" minlength="2" />
+    </p>
+
+    <p>
+        <label for="last_name">Last Name</label>
+        <input type="text" name="last_name" required maxlength="25" minlength="2" />
+    </p>
+
+    <p>
+        <label for="email">Email</label>
+        <input type="email" name="email" required maxlength="25" minlength="2" />
+    </p>
+
+    <p>
+        <label for="username">Username</label>
+        <input type="text" name="username" required maxlength="25" minlength="2" />
+    </p>
+
+    <p>
+        <label for="password">Password</label>
+        <input type="password" name="password" required maxlength="25" minlength="4" />
+    </p>
+
+    <p>
+        <label for="password2">Confirm Password</label>
+        <input type="password" name="password2" required maxlength="25" minlength="4" />
+    </p>
+
+    <button type="submit">Register</button>
 </form>
 
 {% endblock %}
