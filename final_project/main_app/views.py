@@ -49,7 +49,7 @@ def new_post(request):
             new_post = form.save(commit=False)
             new_post.posted_by = request.user
             new_post.save()
-            return redirect('show_post', posts_id)
+            return redirect('show_post', post_id)
     else:
         form = PostForm()
         context = {'form': form}

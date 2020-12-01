@@ -6,15 +6,14 @@
 
 {% block content %}
 
-    <div class="col s10">
-        <a href="{% url 'new_post' %}" type="submit" class="btn">
-        </a>
+<h1>Find a Gig!</h1>
+    
         {% for post in posts %}
         <div class="card">
             <div class="card-content">
                 <a href="{% url 'show_post' post.id %}">
                     <p>{{post.title}}
-                </a> by {{post.user}}</p>
+                </a> by {{post.posted_by}}</p>
                 </a>
             </div>
             {% if request.user == post.user %}
@@ -31,8 +30,8 @@
                         <p>Are you sure you want to delete this post?</p>
                     </div>
                     <div class="modal-footer">
-                        <!-- <a href="{% url 'delete_post' post.id %}"
-                            class="modal-close waves-effect waves-green btn-flat">Confirm</a> -->
+                        <a href="{% url 'delete_post' post.id %}"
+                            class="modal-close waves-effect waves-green btn-flat">Confirm</a>
                         <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
                     </div>
                 </div>
