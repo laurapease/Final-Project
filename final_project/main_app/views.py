@@ -35,8 +35,20 @@ def livestreams(request):
 
 #-----------Post a Job
 
+@login_required
 def new_post(request):
-        return render(request, 'posts/new.html')
+    if request.method == 'POST':
+        post_form = PostForm(request.POST)
+        if post_form.is_valid():
+            new_post = post_form.save(commit=False)
+            new_post.user = request.user
+            new_post.city_id = city_id
+            new_post.save()
+            return redirect('posts_index')
+    else: 
+        form = PostForm()
+        context = {'form': form }
+        return render(request, 'posts/new.html', context)
 
 def edit_post(request):
         return render(request, 'posts/edit.html')

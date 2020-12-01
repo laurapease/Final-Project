@@ -3,6 +3,10 @@ from django.contrib.auth.models import User
 from django.contrib.auth.views import LoginView
 from django.urls import reverse
 from datetime import date
+from pyuploadcare.dj.models import ImageField
+from pyuploadcare.dj.forms import ImageField
+
+
 
 
 # Create your models here.
@@ -20,7 +24,7 @@ class City(models.Model):
 class Profile(models.Model):
     name = models.CharField(max_length=50)
     current_city = models.CharField(max_length=100)
-    photo = models.ImageField(upload_to='images', blank=True)
+    photo = models.ImageField(upload_to='main_app/static/images', blank=True)
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 
     def __str__(self):

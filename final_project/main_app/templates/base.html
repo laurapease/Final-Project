@@ -34,7 +34,7 @@
                     
                        
                     {% if user.is_authenticated %}
-
+                    <li><a class="nav-links" href="{% url 'new_post' %}">Post a Gig</a></li>
                     <li><a class="nav-links" href="{% url 'posts_index' %}">Find a Gig</a></li>
                     <li><a class="nav-links" href="{% url 'resources' %}">Resources</a></li>
                     <li><a class="nav-links" href="{% url 'livestreams' %}">Livestreams</a></li>

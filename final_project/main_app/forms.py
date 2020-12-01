@@ -2,6 +2,8 @@ from django import forms
 from .models import *
 
 class ProfileForm(forms.ModelForm):
+    photo = ImageField(label='')
+
     class Meta: 
         model = Profile
         fields = [
@@ -12,6 +14,7 @@ class ProfileForm(forms.ModelForm):
         ]
 
 class PostForm(forms.ModelForm):
+    
     class Meta:
         model = Post
         fields = [
@@ -19,7 +22,6 @@ class PostForm(forms.ModelForm):
             'posted_by',
             'city',
             'description'
-   
         ]        
 
 # class SignupForm(UserCreationForm):

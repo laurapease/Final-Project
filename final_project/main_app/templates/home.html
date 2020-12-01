@@ -5,4 +5,19 @@
 <hr />
 <p>Home</p>
 
+{{ form.media }}
+
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Save" />
+</form>
+
+{% if posts %}
+{% for post in posts %}
+<div class="col-md-4">
+    <img class="img-fluid" src="{{ post.photo.cdn_url }}-/crop/600x600/center/-/quality/lightest/" alt=""></div>
+{% endfor %}
+{% endif %}
+
 {% endblock %}
