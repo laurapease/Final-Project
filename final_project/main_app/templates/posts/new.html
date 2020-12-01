@@ -1,18 +1,32 @@
 {% extends 'base.html' %}
 
 {% block title %}
-Add a Gig
+Add a Post
 {% endblock %}
 
 {% block content %}
 
-<h1>Add a Gig</h1>
 
-<form method='POST'>
+{% load widget_tweaks %}
+
+<form method="post" novalidate>
     {% csrf_token %}
-    {{form.as_p}}
 
-    <input class='btn' type='submit' value="Add Gig">
+    {% for hidden_field in form.hidden_fields %}
+    {{ hidden_field }}
+    {% endfor %}
+
+    {% for field in form.visible_fields %}
+    <div class="form-group">
+        {{ field.label_tag }}
+        {% render_field field class="form-control" %}
+        {% if field.help_text %}
+        <small class="form-text text-muted">{{ field.help_text }}</small>
+        {% endif %}
+    </div>
+    {% endfor %}
+
+    <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 
 {% endblock %}

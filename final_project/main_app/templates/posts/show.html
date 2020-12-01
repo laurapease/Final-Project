@@ -3,6 +3,9 @@
 
 <h1>About this Gig</h1>
 <hr />
+
+<span><a href="{% url 'show_post' post.id %}"></a></span>
+
 <h4>Job Title: {{ post.title }}</h4>
 
 <h3>Location: {{ post.city }} </h3>

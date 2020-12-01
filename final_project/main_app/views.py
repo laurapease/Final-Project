@@ -41,20 +41,40 @@ def logout(request):
 
 #-----------Post a Job
 
+
+# @login_required
+# def new_post(request):
+#     if request.method == 'POST':
+#         post_form = PostForm(request.POST, request.FILES)
+#         if post_form.is_valid():
+#             post = post_form.save(commit=False)
+#             post.posted_by = request.user
+#             post.save()
+#             return redirect('posts/show.html', new_post.id)
+#     else:
+#         post_form = PostForm()
+#         context = {
+#             'post_form': post_form,
+#             # 'post': post
+#         }
+
+#     return render(request, 'posts/show.html', context)
+    
+
 @login_required
 def new_post(request):
     if request.method == 'POST':
-        form = PostForm(request.POST)
+        form = PostForm(request.POST, request.FILES)
         if form.is_valid():
-            new_post = form.save(commit=False)
-            new_post.user = request.user
-            new_post.save()
-            return redirect('posts_index')
-    else: 
+            post = form.save(commit=False)
+            post.posted_by = request.user
+            post.save()
+            return redirect('home')
+    else:
         form = PostForm()
-        context = {'form': form }
-        return render(request, 'posts/index.html', context)
 
+    return render(request, 'posts/new.html', {'form': form})
+   
 def edit_post(request):
         return render(request, 'posts/edit.html')
 
@@ -63,7 +83,7 @@ def posts_index(request):
     context = {'posts': posts}
     return render(request, 'posts/index.html', context)
 
-def view_post(request, post_id):
+def show_post(request, post_id):
     post = Post.objects.get(id=post_id)
 
     context = {'post': post}
@@ -119,22 +139,22 @@ def signup(request):
 #     context = {'form': form, 'error_message': error_message}
 #     return render(request, 'registration/signup.html', context)
 
-@login_required
-def new_profile(request):
-    if request.method == 'POST':
-        form = ProfileForm(request.POST, request.FILES)
-        if form.is_valid():
-            new_profile = form.save(commit=False)
-            new_profile.user = request.user
-            new_profile.save()
+# @login_required
+# def new_profile(request):
+#     if request.method == 'POST':
+#         form = ProfileForm(request.POST, request.FILES)
+#         if form.is_valid():
+#             new_profile = form.save(commit=False)
+#             new_profile.user = request.user
+#             new_profile.save()
             
-            return redirect('user_profile', new_profile.id)
-        else:
-            return render(request, 'profile/new.html', {'form': form})
-    else: 
-        form = ProfileForm()
-        context = {'form': form}
-        return render(request, 'profile/new.html', context)
+#             return redirect('user_profile', new_profile.id)
+#         else:
+#             return render(request, 'profile/new.html', {'form': form})
+#     else: 
+#         form = ProfileForm()
+#         context = {'form': form}
+#         return render(request, 'profile/new.html', context)
 
 
 
