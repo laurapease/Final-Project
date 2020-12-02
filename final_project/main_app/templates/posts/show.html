@@ -19,6 +19,8 @@
 {% if post.posted_by.id == request.user.id %}
 <div class="card-action">
     <a href="{% url 'delete_post' post.id %}" class="btn-small red">Delete</a>
+    <a href="{% url 'edit_post' post.id %}" class="btn-small">Edit</a>
+
 </div>
 
  

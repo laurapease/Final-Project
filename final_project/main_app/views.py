@@ -64,9 +64,28 @@ def delete_post(request, post_id):
         Post.objects.get(id=post_id).delete()
         return redirect('home')
 
+
+#----------EDIT JOB----------#
+
+
+@login_required
+def edit_post(request, post_id):
+    post = Post.objects.get(id=post_id)
+
+    if request.method == 'POST':
+        post_form = PostForm(request.POST, instance=post)
+        if post_form.is_valid():
+            updated_post = post_form.save()
+            return redirect('show_post', updated_post.id)
+    else:
+        form = PostForm(instance=post)
+        context = {'form': form, 'post': post}
+        return render(request, 'posts/edit.html', context)
+
+
    
-def edit_post(request):
-        return render(request, 'posts/edit.html')
+# def edit_post(request):
+#         return render(request, 'posts/edit.html')
 
 def posts_index(request):
     posts = Post.objects.all()
