@@ -39,7 +39,7 @@ def logout(request):
     auth.logout(request)
     return redirect('about')
 
-#-----------Post a Job
+#----------POST A NEW JOB----------#
 
 @login_required
 def new_post(request):
@@ -57,10 +57,14 @@ def new_post(request):
         return render(request, 'posts/new.html', context)
 
 
+#----------DELETE JOB----------#
 
+@login_required
+def delete_post(request, post_id):
+        Post.objects.get(id=post_id).delete()
+        return redirect('home')
 
-
-
+   
 def edit_post(request):
         return render(request, 'posts/edit.html')
 

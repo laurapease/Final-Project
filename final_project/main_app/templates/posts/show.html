@@ -16,5 +16,14 @@
 
 <p>Posted on: {{post.added_date}}</p>
 
+{% if post.posted_by.id == request.user.id %}
+<div class="card-action">
+    <a href="{% url 'delete_post' post.id %}" class="btn-small red">Delete</a>
+</div>
+
+ 
+{% endif %}
+
+
 
 {% endblock %}
