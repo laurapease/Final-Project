@@ -123,7 +123,8 @@ def signup(request):
                     user = User.objects.create_user(
                         username=username, password=password, email=email, first_name=first_name, last_name=last_name)
                     user.save()
-                    return redirect('login')
+                    login(request, user)
+                    return redirect('home')
         else:
             return render(request, 'registration/signup.html', {'error': 'Passwords do not match'})
     else:
