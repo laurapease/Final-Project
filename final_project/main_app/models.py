@@ -22,7 +22,7 @@ class City(models.Model):
 class Profile(models.Model):
     name = models.CharField(max_length=50)
     current_city = models.CharField(max_length=100)
-    photo = models.ImageField(upload_to='main_app/static/images', blank=True)
+    photo = models.ImageField(blank=True)
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 
     def __str__(self):
@@ -44,7 +44,7 @@ class Livestream(models.Model):
     artist = models.CharField(max_length=100)
     title = models.CharField(max_length=100)
     date = models.DateTimeField(default=timezone.now)
-    artist_img = models.ImageField(upload_to='images/') 
+    artist_img = models.ImageField(upload_to='images')
     description = models.TextField()
     livestream_link = models.URLField(max_length=200)
 

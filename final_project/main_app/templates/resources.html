@@ -2,7 +2,7 @@
 {% block content %}
 
 <h1>Resources</h1>
-<hr />
+
 
 
 <div class="column">
@@ -10,8 +10,8 @@
     <div class="col s12 m6">
         <div class="card blue-grey darken-1">
             <div class="card-content white-text">
-                <span class="card-title">{{ resource.title }}</span>
-                <p>{{ resource.description }}.</p>
+                <span class="card-title" id="resources-title">{{ resource.title }}</span>
+                <p class="resource-description">{{ resource.description }}.</p>
             </div>
             <div class="card-action">
                 <a href="{{ resource.resource_link }}">Visit Site</a>

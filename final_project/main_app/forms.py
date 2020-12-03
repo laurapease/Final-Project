@@ -25,6 +25,7 @@ class PostForm(forms.ModelForm):
         ]   
 
 class LivestreamForm(forms.ModelForm):
+    artist_img = ImageField(label='')
 
     class Meta:
         model = Livestream
