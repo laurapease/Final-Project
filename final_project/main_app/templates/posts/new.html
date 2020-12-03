@@ -12,16 +12,19 @@ Add a Post
 
 
 <h1>Add a Post</h1>
-<div class="row">
+
+    <div class="row">
     <div class="card-panel col m8 offset-m2">
-<form method="POST">
+<form class="post-form" method="POST">
+    
     {% csrf_token %}
         {{ form.as_p }}
-    <input class='btn' type='submit' value="Add Post">
+    <input class='post-btn' type='submit' value="Add Post">
+</div>
 </form>
 
-</div>
-</div>
 
+
+</div>
 
 {% endblock %}

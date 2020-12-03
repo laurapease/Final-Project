@@ -32,6 +32,7 @@ class Post(models.Model):
     title = models.CharField(max_length=100)
     posted_by = models.ForeignKey(User, on_delete=models.CASCADE)
     city = models.CharField(max_length=50)
+    start_date = models.DateField(default=timezone.now)
     description = models.TextField(max_length=500)
     added_date = models.DateTimeField(default=timezone.now)
 
@@ -46,7 +47,6 @@ class Livestream(models.Model):
     artist_img = models.ImageField(upload_to='images/') 
     description = models.TextField(max_length=500)
     livestream_link = models.URLField(max_length=200)
-
 
     def __str__(self):
         return self.artist 

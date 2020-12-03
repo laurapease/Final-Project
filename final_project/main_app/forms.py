@@ -20,6 +20,7 @@ class PostForm(forms.ModelForm):
         fields = [
             'title', 
             'city',
+            'start_date',
             'description'
         ]   
 

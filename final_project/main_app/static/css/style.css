@@ -15,6 +15,7 @@ body {
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
+  color: rgb(229, 226, 226);
 }
 
 main {
@@ -43,6 +44,26 @@ nav {
 
 .post-description {
   color: red;
+}
+
+.card-panel {
+  background-color: #b1d7ec;
+  font-family: "Karla", sans-serif;
+  font-size: 20px;
+  background-image: url(/static/images/pexels-iconcom-479453.jpg);
+  box-shadow: 10px 5px 5px 16px rgba(65, 62, 62, 0.5);
+  color: black;
+}
+
+.post-btn {
+  font-family: "Reenie Beanie", cursive;
+  padding: 5px;
+  margin-bottom: 10px;
+  background-color: #edb66d;
+}
+
+.post-form {
+  color: black;
 }
 
 #nav-title {
