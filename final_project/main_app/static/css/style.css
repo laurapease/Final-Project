@@ -67,6 +67,14 @@ nav {
   font-family: "Karla", sans-serif;
 }
 
+#livestream_img {
+  padding: 10px;
+  display: block;
+  margin: 0 auto auto 0;
+  height: 320px;
+  width: 430px;
+}
+
 form {
   width: 450px;
   margin-left: 50px;
@@ -147,6 +155,11 @@ label {
 }
 
 #resources-title {
-  font-size: 30px;
+  font-size: 40px;
+  color: #e7c8a0;
+}
+
+#resources-link {
+  font-size: 25px;
   color: #f1d2a9;
 }
