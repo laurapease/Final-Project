@@ -37,7 +37,6 @@ class Post(models.Model):
     added_date = models.DateTimeField(default=timezone.now)
 
 
-
     def __str__(self):
         return self.title  
 
@@ -46,9 +45,18 @@ class Livestream(models.Model):
     title = models.CharField(max_length=100)
     date = models.DateTimeField(default=timezone.now)
     artist_img = models.ImageField(upload_to='images/') 
-    description = models.TextField(max_length=500)
+    description = models.TextField()
     livestream_link = models.URLField(max_length=200)
 
     def __str__(self):
         return self.artist 
+
+
+class Resource(models.Model):
+    title = models.CharField(max_length=100)
+    description = models.TextField()
+    recources_link = models.URLField(max_length=200)
+
+    def __str__(self):
+        return self.title         
             
