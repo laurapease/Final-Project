@@ -35,7 +35,17 @@ class LivestreamForm(forms.ModelForm):
             'artist_img', 
             'description',
             'livestream_link'
-        ]               
+        ]  
+
+class ResourceForm(forms.ModelForm):
+
+    class Meta:
+        model = Resource
+        fields = [
+            'title', 
+            'description',
+            'resource_link'
+        ]  
 
 # class SignupForm(UserCreationForm):
 #     email = forms.EmailField(max_length=200)

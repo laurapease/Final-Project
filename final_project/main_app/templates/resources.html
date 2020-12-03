@@ -3,6 +3,23 @@
 
 <h1>Resources</h1>
 <hr />
-<p>Roadie Resources</p>
+
+
+<div class="row">
+    {% for resource in resources %}
+    <div class="col s12 m6">
+        <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+                <span class="card-title">{{ resource.title }}</span>
+                <p>{{ resource.description }}.</p>
+            </div>
+            <div class="card-action">
+                <a href="{{ resource.resource_link }}">Visit Site</a>
+                
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
 
 {% endblock %}
