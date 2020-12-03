@@ -38,9 +38,11 @@ footer {
 }
 
 nav {
-  background-color: #eeb66d;
+  background-color: #f1d2a9;
   box-shadow: 5px;
 }
+
+/* Livestream index page - show info side of card */
 
 .card-stacked {
   background-color: #6f6477;
