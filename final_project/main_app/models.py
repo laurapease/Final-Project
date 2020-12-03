@@ -7,9 +7,6 @@ from pyuploadcare.dj.forms import ImageField
 from django.utils import timezone
 
 
-
-
-
 # Create your models here.
 
 class City(models.Model):
@@ -39,9 +36,18 @@ class Post(models.Model):
     added_date = models.DateTimeField(default=timezone.now)
 
 
-
     def __str__(self):
         return self.title  
 
+class Livestream(models.Model):
+    artist = models.CharField(max_length=100)
+    title = models.CharField(max_length=100)
+    date = models.DateTimeField(default=timezone.now)
+    artist_img = models.ImageField(upload_to='images/') 
+    description = models.TextField(max_length=500)
+    livestream_link = models.URLField(max_length=200)
 
+
+    def __str__(self):
+        return self.artist 
             

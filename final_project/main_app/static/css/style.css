@@ -9,15 +9,60 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  background-color: paleturquoise;
-  font-family: Reenie Beanie, cursive;
+  font-family: "Reenie Beanie", cursive;
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 main {
   flex: 1 0 auto;
+  font-family: "Reenie Beanie", cursive;
 }
 
 footer {
   padding-top: 0;
   text-align: right;
+}
+
+#header-video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+}
+
+nav {
+  background-color: #eeb66d;
+  box-shadow: 5px;
+}
+
+.post-description {
+  color: red;
+}
+
+#nav-title {
+  font-family: "Rock Salt", cursive;
+  font-size: 40px;
+  color: #923d05;
+}
+
+.nav-links {
+  font-family: "Rock Salt", cursive;
+  font-weight: bold;
+  color: #923d05;
+}
+
+.page-footer {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.card {
+  border: 5px;
+  background-color: #d7d4d1;
+  box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.2);
 }

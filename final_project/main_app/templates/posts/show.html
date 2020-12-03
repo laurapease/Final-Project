@@ -3,7 +3,7 @@
 
 <h1>About this Gig</h1>
 <hr />
-
+<div class="post-description">
 <span><a href="{% url 'show_post' post.id %}"></a></span>
 
 <h4>Job Title: {{ post.title }}</h4>
@@ -18,12 +18,11 @@
 
 {% if post.posted_by.id == request.user.id %}
 <div class="card-action">
-    <a href="{% url 'delete_post' post.id %}" class="btn-small red">Delete</a>
-    <a href="{% url 'edit_post' post.id %}" class="btn-small">Edit</a>
+    <a href="{% url 'delete_post' post.id %}" class="btn">Delete</a>
+    <a href="{% url 'edit_post' post.id %}" class="btn">Edit</a>
 
 </div>
-
- 
+</div>
 {% endif %}
 
 

@@ -21,7 +21,20 @@ class PostForm(forms.ModelForm):
             'title', 
             'city',
             'description'
-        ]        
+        ]   
+
+class LivestreamForm(forms.ModelForm):
+
+    class Meta:
+        model = Livestream
+        fields = [
+            'artist', 
+            'title', 
+            'date', 
+            'artist_img', 
+            'description',
+            'livestream_link'
+        ]               
 
 # class SignupForm(UserCreationForm):
 #     email = forms.EmailField(max_length=200)

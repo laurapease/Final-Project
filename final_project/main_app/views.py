@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.forms import UserCreationForm
-from .models import Profile, Post
+from .models import Profile, Post, Livestream
 from django.contrib.auth.models import Permission, User
 from django.contrib.auth.decorators import login_required
 from .forms import PostForm, ProfileForm
@@ -31,8 +31,16 @@ def resources(request):
 
 #-----------Livestreams
 
-def livestreams(request):
-    return render(request, 'livestreams.html')
+@login_required
+# def livestreams_index(request):
+#     return render(request, 'livestreams/index.html')
+
+
+@login_required
+def livestreams_index(request):
+    livestreams = Livestream.objects.all()
+    context = {'livestreams': livestreams}
+    return render(request, 'livestreams/index.html', context)
 
 
 def logout(request):
