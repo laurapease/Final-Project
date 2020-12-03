@@ -44,8 +44,8 @@ class Livestream(models.Model):
     artist = models.CharField(max_length=100)
     title = models.CharField(max_length=100)
     date = models.DateTimeField(default=timezone.now)
-    artist_img = models.ImageField(upload_to='images')
-    description = models.TextField()
+    photo_url = models.TextField(blank=True)
+    description = models.TextField(max_length=300)
     livestream_link = models.URLField(max_length=200)
 
     def __str__(self):

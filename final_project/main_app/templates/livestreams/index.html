@@ -14,14 +14,13 @@ Livestreams
 
         <div class="card horizontal">
             <div class="card-image">
-<!-- <img src="{{ livestream.artist.img.url}}" alt="connect" style="max-height:300px"> -->
+<img src="{{ livestream.photo_url}}" alt="connect">
             </div>
             <div class="card-stacked">
                 <div class="card-content">
-                    <h2>{{ livestream.artist }}</h2>
-                    <h4>{{ livestream.title }}</h4>
-                    <h6> {{ livestream.date }} </h6>
-                    <p>{{ livestream.description }}</p>
+                    <h2 id="artist-title">{{ livestream.artist }} - {{ livestream.title }}</h2>
+                    <h6 id="livestream-date"> {{ livestream.date }} </h6>
+                    <p id="livestream-description">{{ livestream.description|truncatewords:"100" }}</p>
                 </div>
                 <div class="card-action">
                     <a href="{{ livestream.livestream_link }}">Buy Tickets</a>

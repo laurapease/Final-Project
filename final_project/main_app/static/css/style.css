@@ -45,7 +45,7 @@ nav {
 /* Livestream index page - show info side of card */
 
 .card-stacked {
-  background-color: #536e7a;
+  background-color: #618696;
   font-family: "Reenie Beanie", cursive;
   box-shadow: 10px 5px 5px 10px rgba(65, 62, 62, 0.5);
 }
@@ -57,6 +57,14 @@ nav {
   background-image: url(/static/images/marjanblan-5Ft4NWTmeJE-unsplash.jpg);
   box-shadow: 10px 5px 5px 16px rgba(65, 62, 62, 0.5);
   color: black;
+}
+
+#livestream-description {
+  font-family: "Karla", sans-serif;
+}
+
+#livestream-date {
+  font-family: "Karla", sans-serif;
 }
 
 form {
@@ -93,10 +101,19 @@ label {
   color: black;
 }
 
+/* Post Index page */
+
 #post-index {
-  background-image: url(/static/images/pexels-milo-textures-2768398.jpg);
+  background-image: url(/static/images/thomas-heintz-0tgMnMIYQ9Y-unsplash.jpg);
   box-shadow: 10px 5px 5px 16px rgba(65, 62, 62, 0.5);
   margin-top: 40px;
+  font-size: 20px;
+  font-family: karla, sans serif;
+  font-weight: bolder;
+}
+
+#posted-by {
+  color: #923d05;
 }
 
 #nav-title {
