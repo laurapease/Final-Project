@@ -35,6 +35,7 @@ class Post(models.Model):
     start_date = models.DateField(default=timezone.now)
     description = models.TextField(max_length=500)
     added_date = models.DateTimeField(default=timezone.now)
+    contact = models.CharField(max_length=200)
 
 
     def __str__(self):
