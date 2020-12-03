@@ -96,7 +96,7 @@ def edit_post(request, post_id):
 #         return render(request, 'posts/edit.html')
 
 def posts_index(request):
-    posts = Post.objects.all()
+    posts = Post.objects.all().order_by('-added_date')
     context = {'posts': posts}
     return render(request, 'posts/index.html', context)
 

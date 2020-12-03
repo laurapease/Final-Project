@@ -18,32 +18,38 @@ Livestreams
             </div>
             <div class="card-stacked">
                 <div class="card-content">
+                    <h2>{{ livestream.artist }}</h2>
                     <h4>{{ livestream.title }}</h4>
+                    <h6> {{ livestream.date }} </h6>
+                    <p>{{ livestream.description }}</p>
                 </div>
                 <div class="card-action">
-                    <a href="https://kelloggfamilystore.com/collections/experiences/products/december-2020-virtual-tour-dates?variant=37620059799722">Buy Tickets</a>
+                    <a href="{{ livestream.livestream_link }}">Buy Tickets</a>
                 </div>
             </div>
         </div>
     </div>
 
-<div class="col s12 m7">
-    <h2 class="header">Horizontal Card</h2>
+<div class="col s12 m6">
+
     <div class="card horizontal">
         <div class="card-image">
-            <img src="/static/images/IMG_4129.JPG">
+            <img
+                src="https://cdn.shopify.com/s/files/1/1664/3789/products/12.11SK_sHolidayBash12.30YearinReview_1024x1024@2x.png?v=1606086696">
         </div>
         <div class="card-stacked">
             <div class="card-content">
-                <p>I am a very simple card. I am good at containing small bits of information.</p>
+                <h2>{{ livestream.artist }}</h2>
+                <h4>{{ livestream.title }}</h4>
+                <h6> {{ livestream.date }} </h6>
+                <p>{{ livestream.description }}</p>
             </div>
             <div class="card-action">
-                <a href="#">This is a link</a>
+                <a href="{{ livestream.livestream_link }}">Buy Tickets</a>
             </div>
         </div>
     </div>
 </div>
-
 
 </div>
 {% endfor %}
