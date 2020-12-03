@@ -15,7 +15,7 @@ body {
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  color: rgb(229, 226, 226);
+  color: #f1d2a9;
 }
 
 main {
@@ -42,8 +42,8 @@ nav {
   box-shadow: 5px;
 }
 
-.post-description {
-  color: red;
+.card-stacked {
+  background-color: #6f6477;
 }
 
 .card-panel {
@@ -55,6 +55,27 @@ nav {
   color: black;
 }
 
+form {
+  width: 450px;
+  margin-left: 50px;
+}
+
+input,
+textarea {
+  border-bottom: 2px solid black;
+  color: black;
+  font-family: "Oxygen", sans-serif;
+}
+
+label {
+  color: black;
+  margin-top: 25px;
+  margin-bottom: 50px;
+  font-family: "Oxygen", sans-serif;
+  font-weight: bolder;
+  font-size: 20px;
+}
+
 .post-btn {
   font-family: "Reenie Beanie", cursive;
   padding: 5px;
@@ -64,6 +85,12 @@ nav {
 
 .post-form {
   color: black;
+}
+
+#post-index {
+  background-image: url(/static/images/pexels-milo-textures-2768398.jpg);
+  box-shadow: 10px 5px 5px 16px rgba(65, 62, 62, 0.5);
+  margin-top: 40px;
 }
 
 #nav-title {

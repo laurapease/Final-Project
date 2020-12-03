@@ -21,7 +21,7 @@ class PostForm(forms.ModelForm):
             'title', 
             'city',
             'start_date',
-            'description'
+            'description',
         ]   
 
 class LivestreamForm(forms.ModelForm):

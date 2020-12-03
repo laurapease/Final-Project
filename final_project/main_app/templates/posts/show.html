@@ -7,15 +7,17 @@
 <div class="post-description">
 <span><a href="{% url 'show_post' post.id %}"></a></span>
 
-<h4>Job Title: {{ post.title }}</h4>
+<h2>Job Title: {{ post.title }}</h2>
 
 <h3>Location: {{ post.city }} </h3>
 
+<h4>Start Date: {{ post.start_date }} </h4>
+
 <h4>Description: {{ post.description }}</h4>
 
-<p>Added by {{post.posted_by}}</p>
+<h6>Added by {{post.posted_by}}</h6>
 
-<p>Posted on: {{post.added_date}}</p>
+<h6>Posted on: {{post.added_date}}</h6>
 
 {% if post.posted_by.id == request.user.id %}
 <div class="card-action">
