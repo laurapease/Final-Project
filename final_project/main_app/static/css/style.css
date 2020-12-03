@@ -10,6 +10,7 @@ body {
   min-height: 100vh;
   flex-direction: column;
   font-family: "Reenie Beanie", cursive;
+  background-image: url(/static/images/pexels-dawn-lio-2177813.jpg);
   background-position: center center;
   background-attachment: fixed;
   background-repeat: no-repeat;
