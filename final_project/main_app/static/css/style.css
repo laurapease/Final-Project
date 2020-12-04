@@ -134,9 +134,8 @@ form {
 
 input,
 textarea {
-  border-bottom: 10px solid black;
   color: black;
-  font-size: 25px;
+  font-size: 15px;
   font-family: "Karla", sans-serif;
 }
 
@@ -162,9 +161,16 @@ label {
 }
 
 .login-form {
-  margin-left: 260px;
-  margin-top: 50px;
-  font-weight: bolder;
+  margin-left: 220px;
+  margin-top: 310px;
+}
+
+.signup input {
+  color: white;
+}
+
+.login input {
+  color: white;
 }
 
 #show-text {
