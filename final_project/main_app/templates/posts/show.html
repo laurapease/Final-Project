@@ -6,19 +6,19 @@
 <div class="post-description">
 <span><a href="{% url 'show_post' post.id %}"></a></span>
 
-<h2>Job Title: {{ post.title }}</h2>
+<h2 id="show-text">Job Title: {{ post.title }}</h2>
 
-<h3>Location: {{ post.city }} </h3>
+<h3id="show-text">Location: {{ post.city }} </h3>
 
-<h4>Start Date: {{ post.start_date }} </h4>
+<h4id="show-text">Start Date: {{ post.start_date }} </h4>
 
-<h4>Description: {{ post.description }}</h4>
+<h4id="show-text">Description: {{ post.description }}</h4>
 
-<h4>Contact: {{ post.contact }}</h4>
+<h4id="show-text">Contact: {{ post.contact }}</h4>
 
-<h6>Added by {{post.posted_by}}</h6>
+<h6id="show-text">Added by {{post.posted_by}}</h6>
 
-<h6>Posted on: {{post.added_date}}</h6>
+<h6id="show-text">Posted on: {{post.added_date}}</h6>
 
 {% if post.posted_by.id == request.user.id %}
 <div class="card-action">

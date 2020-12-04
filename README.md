@@ -2,6 +2,8 @@
 
 Capstone project for General Assembly SEI
 
+# App Brand Statement
+
 Roadie Relief is a web application built with those touring crew members left unemployed by COVID.
 
 The live music touring industry grosses tens of billon of dollars annually worldwide.
@@ -10,17 +12,29 @@ March 2020 saw virtually all major tours and festivals either cancelled or postp
 
 As these venues and festivals have been shuttered, tens of thousands of workers that depend on live music for their income are now out of work.
 
-The target users of this application are those out of work roadies. I hope to create an online community where people can share work available in cities across the US, as well as online resources offering grants or other assistance. And, in an effort to support those artists that these crews help put on shows each night, a page dedicated to livestreams
+The target users of this application are those out of work roadies. I hope to create an online community where people can share work available in cities across the US, as well as online resources offering grants or other assistance. And, in an effort to support those artists that these crews help put on shows each night, a page dedicated to upcoming livestreams
 
-As a User, I want to be able to post job openings in a city.
-As a User, I want to be able to find a list of job openings in a city.
-As a User, I want to be able to find upcoming Livestreams to watch to support out of work musicians
-As a User, I want to find a list of resources for out of work touring crew when I click the "Resources" link
+# User Stories
 
-Technologies Used:
+- As a user, I would like to see a brand statement about the mission of the site
+- As a user, I would like to post a job in Nashville to help fellow touring crew.
+- As a user, I would like to be able to look for jobs in my area.
+- As a user, I would like to find resources for touring crew.
+- As a user, I would like to find upcoming livestreams for artists that I love.
+
+# Technologies Used:
 
 - Django
+- Python
+- Pillow
+- Uploadcare
+- Materialize
+- Crispy forms
 
-Stretch Goals:
+# Stretch Goals:
 
-- Create more cities for posts, and eventually allow users to create a city to post a job
+- Create more cities for posts, and eventually allow users to create a city to post a job.
+- Allow users to create a profile and add work experience. Almost like a LinkedIn, but for touring crew only.
+- Allow users to post an upcoming livestream that they would like to promote
+- Figure out how to upload photos using uploadcare
+- Allow users to comment on job posts
