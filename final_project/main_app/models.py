@@ -46,7 +46,7 @@ class Livestream(models.Model):
     title = models.CharField(max_length=100)
     date = models.DateTimeField(default=timezone.now)
     photo_url = models.TextField(blank=True)
-    description = models.TextField(max_length=200)
+    description = models.TextField(max_length=500)
     livestream_link = models.URLField(max_length=200)
 
     def __str__(self):

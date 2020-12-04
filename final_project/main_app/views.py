@@ -40,7 +40,7 @@ def resources(request):
 
 @login_required
 def livestreams_index(request):
-    livestreams = Livestream.objects.all()
+    livestreams = Livestream.objects.all().order_by('date')
     context = {'livestreams': livestreams}
     return render(request, 'livestreams/index.html', context)
 

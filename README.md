@@ -30,6 +30,9 @@ The target users of this application are those out of work roadies. I hope to cr
 - Uploadcare
 - Materialize
 - Crispy forms
+- PostGresSQL
+- CSS
+- HTML
 
 # Link to ERD:
 

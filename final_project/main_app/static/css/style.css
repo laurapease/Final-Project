@@ -27,6 +27,12 @@ body {
   color: white;
 }
 
+#petty-quote {
+  color: white;
+  font-size: 50px;
+  font-weight: bolder;
+}
+
 #about-page nav {
   background: transparent;
 }
