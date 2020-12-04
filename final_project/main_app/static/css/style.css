@@ -18,14 +18,37 @@ body {
   color: #f1d2a9;
 }
 
+#about-page {
+  background-image: url(/static/images/curtainsdown.jpg);
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 main {
   flex: 1 0 auto;
   font-family: "Reenie Beanie", cursive;
+}
+.about {
+  font-family: Karla, sans serif;
+  color: antiquewhite;
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.welcome {
+  text-align: center;
+  color: #e6dfd6;
 }
 
 footer {
   padding-top: 0;
   text-align: right;
+}
+
+.contact-links {
+  color: white;
 }
 
 #header-video {
@@ -90,12 +113,18 @@ textarea {
 /* Form tags on post input form */
 
 label {
-  color: #923d05;
+  color: #eed8bb;
   margin-top: 25px;
   margin-bottom: 50px;
   font-family: "Reenie Beanie", cursive;
   font-weight: bolder;
-  font-size: 25px;
+  font-size: 30px;
+  text-transform: uppercase;
+  background: transparent;
+}
+
+#show-text {
+  color: antiquewhite;
 }
 
 .post-btn {
@@ -143,7 +172,7 @@ label {
 
 .card {
   border: 5px;
-  background-color: #d7d4d1;
+  background: transparent;
   box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.2);
 }
 

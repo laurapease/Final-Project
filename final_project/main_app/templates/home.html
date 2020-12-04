@@ -7,12 +7,13 @@ Home
 {% block content %}
 
 
-
+<div class="welcome"><h1>Welcome to Roadie Relief</h1>
+<a href="{% url 'about' %}"><h3 class="welcome">Click to read our story...</h3></a>
+</div> 
 <main class="video-container">
     <video autoplay muted loop id="header-video">
         <source src="/static/videos/production ID_3975494.mp4" type="video/mp4">
     </video>
 </main>
-
 
 {% endblock %}

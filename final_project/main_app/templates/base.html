@@ -38,6 +38,8 @@
 
                 <ul class="right">
                     <li><a class="nav-links" href="/">Home</a></li>
+                    <li><a class="nav-links" href="/about/">About Us</a></li>
+
                     
                        
                     {% if user.is_authenticated %}
@@ -62,7 +64,10 @@
     {% endblock %}
 </main>
     <footer class="page-footer">
-        
+        <div class="left">Site Created by Laura Pease
+            <a class="contact-links"href="https://github.com/laurapease">Github</a>
+            <a class="contact-links" href="https://linkedin.com/in/laurapease">LinkedIn</a>
+        </div>
         <div class="right">All Rights Reserved, &copy; 2020 Roadie Relief &nbsp;</div>
     </footer>
 </body>
