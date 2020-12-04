@@ -24,15 +24,38 @@ body {
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
+  color: white;
+}
+
+#about-page nav {
+  background: transparent;
+}
+
+.login {
+  background-image: url(/static/images/emptyseats.jpg);
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: black;
+}
+
+.signup {
+  background-image: url(/static/images/soundboard.jpg);
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 main {
   flex: 1 0 auto;
   font-family: "Reenie Beanie", cursive;
 }
+
 .about {
   font-family: Karla, sans serif;
-  color: antiquewhite;
+  color: white;
   font-size: 20px;
   font-weight: bolder;
 }
@@ -105,22 +128,37 @@ form {
 
 input,
 textarea {
-  border-bottom: 2px solid black;
+  border-bottom: 10px solid black;
   color: black;
+  font-size: 25px;
   font-family: "Karla", sans-serif;
 }
 
 /* Form tags on post input form */
 
-label {
-  color: #eed8bb;
+.login label {
+  color: black;
   margin-top: 25px;
   margin-bottom: 50px;
   font-family: "Reenie Beanie", cursive;
-  font-weight: bolder;
+  font-size: 50px;
+  background: transparent;
+}
+
+label {
+  color: orange;
+  margin-top: 25px;
+  margin-bottom: 50px;
+  font-family: "Reenie Beanie", cursive;
   font-size: 30px;
   text-transform: uppercase;
   background: transparent;
+}
+
+.login-form {
+  margin-left: 260px;
+  margin-top: 50px;
+  font-weight: bolder;
 }
 
 #show-text {
