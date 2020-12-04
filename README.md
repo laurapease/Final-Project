@@ -31,6 +31,15 @@ The target users of this application are those out of work roadies. I hope to cr
 - Materialize
 - Crispy forms
 
+# Link to ERD:
+
+https://imgur.com/a/9lpoEMW
+
+# Links to Wireframes:
+
+https://imgur.com/a/AyQDJmb
+https://imgur.com/a/23jz9go
+
 # Stretch Goals:
 
 - Create more cities for posts, and eventually allow users to create a city to post a job.
